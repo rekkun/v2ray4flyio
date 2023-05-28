@@ -3,11 +3,14 @@
 UUID="00000000-0000-0000-0000-000000000000"
 APP_NAME="v2rek"
 REGION="hkg"
+FLY_API_TOKEN="fo1_IEYKNmvByES49YALdK326IoFu1dmLbDHRrG2VoqxvF8"
 
 if ! command -v flyctl >/dev/null 2>&1; then
     printf '\e[33mCould not resolve command - flyctl. So, install flyctl first.\n\e[0m'
     curl -L https://fly.io/install.sh | FLYCTL_INSTALL=/usr/local sh
 fi
+
+flyctl auth login -t ${fo1_IEYKNmvByES49YALdK326IoFu1dmLbDHRrG2VoqxvF8}
 
 if [ -z "${APP_NAME}" ]; then
     printf '\e[31mPlease set APP_NAME first.\n\e[0m' && exit 1
