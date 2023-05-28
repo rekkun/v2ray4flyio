@@ -10,7 +10,7 @@ if ! command -v flyctl >/dev/null 2>&1; then
     curl -L https://fly.io/install.sh | FLYCTL_INSTALL=/usr/local sh
 fi
 
-flyctl auth login -t ${fo1_IEYKNmvByES49YALdK326IoFu1dmLbDHRrG2VoqxvF8}
+flyctl auth login --access-token ${FLY_API_TOKEN}
 
 if [ -z "${APP_NAME}" ]; then
     printf '\e[31mPlease set APP_NAME first.\n\e[0m' && exit 1
